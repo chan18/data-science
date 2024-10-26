@@ -1,0 +1,17 @@
+version: '3.6'
+
+services: 
+  jupyterlab:
+    build: .
+    networks:
+      - stream_network
+    #image: jupyter/minimal-notebook
+    ports: 
+      - 8888:8888
+    volumes: 
+      - ./work:/work
+      - H:/sideproject/Math:/Math
+
+networks:
+  stream_network:
+    name: stream_network
